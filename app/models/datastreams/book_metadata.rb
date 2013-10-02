@@ -4,7 +4,9 @@ class BookMetadata < ActiveFedora::OmDatastream
     t.root(path: "fields")
     t.title(index_as: :stored_searchable)
     t.author(index_as: :stored_searchable)
-  end
+    t.publication_date(index_as: :stored_searchable)
+    t.publisher(index_as: :stored_searchable)  
+end
 
   def self.xml_template
     Nokogiri::XML.parse("<fields/>")
